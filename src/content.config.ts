@@ -1,8 +1,11 @@
 import { defineCollection, z } from "astro:content";
-import { glob } from 'astro/loaders';
+import { glob } from "astro/loaders";
 
-const blog = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/blog" }),
+const aiExperiments = defineCollection({
+  loader: glob({
+    pattern: "**/*.{md,mdx}",
+    base: "./src/content/ai-experiments",
+  }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -12,16 +15,21 @@ const blog = defineCollection({
   }),
 });
 
-const projects = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/projects" }),
+const disconnectToConnect = defineCollection({
+  loader: glob({
+    pattern: "**/*.{md,mdx}",
+    base: "./src/content/disconnect-to-connect",
+  }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
     date: z.coerce.date(),
     draft: z.boolean().optional(),
-    demoURL: z.string().optional(),
-    repoURL: z.string().optional(),
+    tags: z.array(z.string()).optional(),
   }),
 });
 
-export const collections = { blog, projects };
+export const collections = {
+  "ai-experiments": aiExperiments,
+  "disconnect-to-connect": disconnectToConnect,
+};

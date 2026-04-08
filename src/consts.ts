@@ -1,40 +1,39 @@
 import type { Metadata, Site, Socials } from "@types";
 
 export const SITE: Site = {
-  TITLE: "Astro Micro",
-  DESCRIPTION: "Astro Micro is an accessible and lightweight blog.",
-  EMAIL: "trevortylerlee@gmail.com",
+  TITLE: "Rado Pavelko",
+  DESCRIPTION:
+    "Sharing my AI experiments and how to disconnect to connect.",
+  EMAIL: "rado@pavelko.com",
   NUM_POSTS_ON_HOMEPAGE: 5,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
 };
 
 export const HOME: Metadata = {
   TITLE: "Home",
-  DESCRIPTION: "Astro Micro is an accessible theme for Astro.",
-};
-
-export const BLOG: Metadata = {
-  TITLE: "Blog",
-  DESCRIPTION: "A collection of articles on topics I am passionate about.",
-};
-
-export const PROJECTS: Metadata = {
-  TITLE: "Projects",
   DESCRIPTION:
-    "A collection of my projects with links to repositories and live demos.",
+    "Sharing my AI experiments and how to disconnect to connect.",
+};
+
+export const AI_EXPERIMENTS: Metadata = {
+  TITLE: "AI Experiments",
+  DESCRIPTION:
+    "Exploring the frontiers of artificial intelligence — experiments, findings, and reflections.",
+};
+
+export const DISCONNECT_TO_CONNECT: Metadata = {
+  TITLE: "Disconnect to Connect",
+  DESCRIPTION:
+    "On the art of stepping back from technology to deepen real-world connections.",
 };
 
 export const SOCIALS: Socials = [
   {
-    NAME: "X (formerly Twitter)",
-    HREF: "https://twitter.com/boogerbuttcheek",
+    NAME: "LinkedIn",
+    HREF: "https://linkedin.com/in/radovanpavelko",
   },
   {
     NAME: "GitHub",
-    HREF: "https://github.com/trevortylerlee",
-  },
-  {
-    NAME: "Website",
-    HREF: "https://trevortylerlee.com",
+    HREF: "https://github.com/radovanpavelko",
   },
 ];

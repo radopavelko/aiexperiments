@@ -3,14 +3,14 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
-import { BLOG } from "@consts";
+import { AI_EXPERIMENTS } from "@consts";
 
-const data = (await getCollection("blog"))
+const data = (await getCollection("ai-experiments"))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 type Acc = {
-  [year: string]: CollectionEntry<"blog">[];
+  [year: string]: CollectionEntry<"ai-experiments">[];
 };
 
 const posts = data.reduce((acc: Acc, post) => {
@@ -25,10 +25,16 @@ const posts = data.reduce((acc: Acc, post) => {
 const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
 ---
 
-<Layout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
+<Layout title={AI_EXPERIMENTS.TITLE} description={AI_EXPERIMENTS.DESCRIPTION}>
   <Container>
     <aside data-pagefind-ignore>
       <div class="space-y-10">
+        <div class="animate space-y-2">
+          <h1 class="text-2xl font-semibold tracking-wide text-black dark:text-white">
+            AI Experiments
+          </h1>
+          <p class="text-sm opacity-75">{AI_EXPERIMENTS.DESCRIPTION}</p>
+        </div>
         <div class="space-y-4">
           {
             years.map((year) => (
@@ -36,15 +42,13 @@ const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
                 <div class="font-semibold text-black dark:text-white">
                   {year}
                 </div>
-                <div>
-                  <ul class="not-prose flex flex-col gap-4">
-                    {posts[year].map((post) => (
-                      <li>
-                        <ArrowCard entry={post} />
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <ul class="not-prose flex flex-col gap-4">
+                  {posts[year].map((post) => (
+                    <li>
+                      <ArrowCard entry={post} />
+                    </li>
+                  ))}
+                </ul>
               </section>
             ))
           }

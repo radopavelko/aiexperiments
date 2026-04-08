@@ -1,26 +1,19 @@
 ---
 import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
-import { SITE } from "@consts";
 ---
 
 <header transition:persist>
   <Container>
     <div class="flex flex-wrap justify-between gap-y-2">
       <Link href="/" underline={false}>
-        <div class="font-semibold">
-          {SITE.TITLE}&nbsp;🔬
-        </div>
+        <div class="font-semibold tracking-wide">Rado Pavelko</div>
       </Link>
       <nav class="flex items-center gap-1 text-sm">
-        <Link href="/blog">blog</Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/projects">projects</Link>
-        <span>
-          {`/`}
-        </span>
+        <Link href="/ai-experiments">AI Experiments</Link>
+        <span>{`/`}</span>
+        <Link href="/disconnect-to-connect">Disconnect to Connect</Link>
+        <span>{`/`}</span>
         <button
           id="magnifying-glass"
           aria-label="Search"

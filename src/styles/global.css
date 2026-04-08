@@ -11,14 +11,6 @@
     Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
@@ -48,13 +40,13 @@
   body {
     @apply font-sans antialiased;
     @apply flex flex-col;
-    @apply bg-neutral-100 dark:bg-neutral-900;
-    @apply text-black/75 dark:text-white/75;
+    @apply bg-[#F5F4F0] dark:bg-neutral-900;
+    @apply text-black/70 dark:text-white/75;
   }
 
   header {
     @apply fixed left-0 right-0 top-0 z-50 py-6;
-    @apply bg-neutral-100/75 dark:bg-neutral-900/75;
+    @apply bg-[#F5F4F0]/80 dark:bg-neutral-900/75;
     @apply saturate-200 backdrop-blur-xs;
   }
 
@@ -83,6 +75,19 @@
     @apply text-black dark:text-white;
     @apply decoration-black/50 dark:decoration-white/50;
   }
+}
+
+/* Hero section typography */
+.hero-name {
+  @apply text-6xl font-black tracking-tight text-black dark:text-white;
+  @apply leading-none uppercase;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  @apply mt-4 text-sm uppercase tracking-widest text-black/50 dark:text-white/50;
+  letter-spacing: 0.18em;
 }
 
 .animate {
@@ -137,11 +142,11 @@ pre {
 
 /* copy code button on codeblocks */
 .copy-code {
-  @apply absolute right-3 top-3 grid size-9 place-content-center rounded-sm border border-black/15 bg-neutral-100 text-center duration-300 ease-in-out dark:border-white/20 dark:bg-neutral-900;
+  @apply absolute right-3 top-3 grid size-9 place-content-center rounded-sm border border-black/15 bg-[#F5F4F0] text-center duration-300 ease-in-out dark:border-white/20 dark:bg-neutral-900;
 }
 
 .copy-code:hover {
-  @apply bg-[#E9E9E9] transition-colors dark:bg-[#232323];
+  @apply bg-[#E9E8E4] transition-colors dark:bg-[#232323];
 }
 
 .copy-code:active {

@@ -10,7 +10,7 @@ import TableOfContents from "@components/TableOfContents.astro";
 import Giscus from "@components/Giscus.astro";
 
 export async function getStaticPaths() {
-  const posts = (await getCollection("blog"))
+  const posts = (await getCollection("ai-experiments"))
     .filter((post) => !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   return posts.map((post) => ({
@@ -18,9 +18,9 @@ export async function getStaticPaths() {
     props: post,
   }));
 }
-type Props = CollectionEntry<"blog">;
+type Props = CollectionEntry<"ai-experiments">;
 
-const posts = (await getCollection("blog"))
+const posts = (await getCollection("ai-experiments"))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
@@ -54,7 +54,7 @@ const { Content, headings } = await render(post);
 <Layout title={post.data.title} description={post.data.description}>
   <Container>
     <div class="animate">
-      <BackToPrevious href="/blog">Back to blog</BackToPrevious>
+      <BackToPrevious href="/ai-experiments">Back to AI Experiments</BackToPrevious>
     </div>
     <div class="my-10 space-y-1">
       <div class="animate flex items-center gap-1.5">
@@ -66,14 +66,14 @@ const { Content, headings } = await render(post);
           <div class="font-base text-sm">
             {readingTime(post.body)}
           </div>
-        )}        
+        )}
       </div>
       <h1 class="animate text-3xl font-semibold text-black dark:text-white">
         {post.data.title}
       </h1>
       {
-        post.data.tags && post.data.tags?.length > 0 ? (
-          <div class="animate flex gap-2 pt-1">
+        post.data.tags && post.data.tags.length > 0 ? (
+          <div class="animate flex flex-wrap gap-2 pt-1">
             {post.data.tags.map((tag) => (
               <a
                 href={`/tags/${tag}`}
