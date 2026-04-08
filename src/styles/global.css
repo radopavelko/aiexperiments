@@ -40,13 +40,13 @@
   body {
     @apply font-sans antialiased;
     @apply flex flex-col;
-    @apply bg-[#F5F4F0] dark:bg-neutral-900;
+    @apply bg-[#f9f9f9] dark:bg-neutral-900;
     @apply text-black/70 dark:text-white/75;
   }
 
   header {
     @apply fixed left-0 right-0 top-0 z-50 py-6;
-    @apply bg-[#F5F4F0]/80 dark:bg-neutral-900/75;
+    @apply bg-[#f9f9f9]/80 dark:bg-neutral-900/75;
     @apply saturate-200 backdrop-blur-xs;
   }
 
@@ -142,11 +142,11 @@ pre {
 
 /* copy code button on codeblocks */
 .copy-code {
-  @apply absolute right-3 top-3 grid size-9 place-content-center rounded-sm border border-black/15 bg-[#F5F4F0] text-center duration-300 ease-in-out dark:border-white/20 dark:bg-neutral-900;
+  @apply absolute right-3 top-3 grid size-9 place-content-center rounded-sm border border-black/15 bg-[#f9f9f9] text-center duration-300 ease-in-out dark:border-white/20 dark:bg-neutral-900;
 }
 
 .copy-code:hover {
-  @apply bg-[#E9E8E4] transition-colors dark:bg-[#232323];
+  @apply bg-[#efefef] transition-colors dark:bg-[#232323];
 }
 
 .copy-code:active {
